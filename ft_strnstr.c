@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
@@ -32,5 +33,14 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 			return ((char *)str);
 		str++;
 	}
+	return (0);
+}
+
+int main(void)
+{
+	char str[] = "MZIRIBMZIRIBMZE123";
+	char str2[] = "MZIRIBMZE";
+	size_t n = 9;
+	printf("%s\n", ft_strnstr(str, str2, n));
 	return (0);
 }

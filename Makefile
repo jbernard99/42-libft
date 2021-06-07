@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 # -*- MakeFile -*-
-EXEC = libft.a
+NAME = libft.a
 HEADER = libft.h
 CC = gcc
 AR = ar rc
@@ -26,9 +26,9 @@ CFLAGS = -Wall -Wextra -Werror
 SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 
-all : $(EXEC)
+all : $(NAME)
 
-$(EXEC) : $(OBJ)
+$(NAME) : $(OBJ)
 	$(AR) $(NAME) $^ 
 
 %.o : %.c $(HEADER)
@@ -36,3 +36,9 @@ $(EXEC) : $(OBJ)
 
 clean :
 	rm -rf *.o
+
+fclean : clean
+	rm -rf $(NAME)
+
+re : fclean all
+
