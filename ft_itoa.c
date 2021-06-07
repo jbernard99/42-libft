@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	get_len(int n)
 {
@@ -34,13 +35,17 @@ char	*ft_itoa(int n)
 	}
 	else
 		temp = n;
-	if (!(ptr = malloc(len + 1)))
+	ptr = malloc(len + 1);
+	if (!(ptr))
 		return (0);
 	ptr[len] = 0;
 	if (n < 0)
 		ptr[0] = '-';
 	ptr[--len] = '0' + (temp % 10);
-	while (temp /= 10)
+	while (temp >= 10)
+	{
+		temp = temp / 10;
 		ptr[--len] = '0' + (temp % 10);
+	}
 	return (ptr);
 }

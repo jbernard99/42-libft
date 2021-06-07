@@ -34,7 +34,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (start < end && is_in_set(*(end - 1), set))
 		--end;
 	len = end - start + 1;
-	if (!(ptr = malloc(len)))
+	ptr = malloc(len);
+	if (!ptr)
 		return (0);
 	ft_strlcpy(ptr, start, len);
 	return (ptr);
