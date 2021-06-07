@@ -9,7 +9,7 @@
 /*   Updated: 2021/05/17 11:44:21 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 static size_t get_word_cnt(char const *str, char c)
 {
 	size_t cnt;
@@ -34,3 +34,4 @@ char **ft_split(char const *s, char c)
 {
 	
 }
+*/

@@ -14,7 +14,7 @@
 
 static int	get_len(int n)
 {
-	if (m == 0)
+	if (n == 0)
 		return (0);
 	else
 		return (1 + get_len(n / 10));

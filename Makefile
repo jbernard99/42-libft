@@ -10,7 +10,11 @@
 #                                                                              #
 # **************************************************************************** #
 # -*- MakeFile -*-
-NAME = libft.a
+EXEC = libft.a
+HEADER = libft.h
+CC = gcc
+AR = ar rc
+CFLAGS = -Wall -Wextra -Werror
 
 #SRC = 	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 #		ft_memchr.c ft_memcmp.c ft_strlen.c ft_isalpha.c ft_isdigit.c \
@@ -19,6 +23,16 @@ NAME = libft.a
 #		ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
 #		ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
 #		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRC = *.c
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
+all : $(EXEC)
+
+$(EXEC) : $(OBJ)
+	$(AR) $(NAME) $^ 
+
+%.o : %.c $(HEADER)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean :
+	rm -rf *.o

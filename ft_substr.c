@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	void	*ptr;
 
 	if (!s || ft_strlen(s) < start || !len)
 		return (ft_strdup(""));
-	if (!(ptr = malloc(size)))
+	if (!(ptr = malloc(len)))
 		return (0);
 	ft_strlcpy(ptr, s + start, len);
 	return (ptr);

@@ -18,18 +18,18 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 	char	*ptr2;
 
 	if (!*to_find)
-		return (str);
+		return ((char *)str);
 	while (n-- && *str)
 	{
-		ptr1 = str;
-		ptr2 = to_find;
+		ptr1 = (char *)str;
+		ptr2 = (char *)to_find;
 		while (*ptr2 && *ptr1 == *ptr2)
 		{
 			ptr1++;
 			ptr2++;
 		}
 		if (*ptr2 == 0)
-			return (str);
+			return ((char *)str);
 		str++;
 	}
 	return (0);

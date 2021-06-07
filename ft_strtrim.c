@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isinset(char c, char const *set)
+#include "libft.h"
+
+int	is_in_set(char c, char const *set)
 {
 	while (*set)
 		if (c == *set++)
@@ -27,9 +29,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = (char *)s1;
 	end = start + ft_strlen(s1);
-	while (*start && is_included(*start, set))
+	while (*start && is_in_set(*start, set))
 		++start;
-	while (start < end && isincluded(*(end - 1), set))
+	while (start < end && is_in_set(*(end - 1), set))
 		--end;
 	len = end - start + 1;
 	if (!(ptr = malloc(len)))
