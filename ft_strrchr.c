@@ -22,7 +22,7 @@ char	*ft_strrchr(const char *str, int c)
 		if (*str == (unsigned char)c)
 			ptr = (char *)str;
 		if (*str == 0)
-			break;
+			break ;
 		str++;
 	}
 	return (ptr);

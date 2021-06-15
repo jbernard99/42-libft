@@ -12,14 +12,20 @@
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
 	char	*ptr1;
 	char	*ptr2;
+	size_t	len_to_find;
 
 	if (!*to_find)
 		return ((char *)str);
+	len_to_find = ft_strlen(to_find);
+	if (!ft_strlen(str) || n < len_to_find)
+		return (0);
+	n -= --len_to_find;
 	while (n-- && *str)
 	{
 		ptr1 = (char *)str;
@@ -33,14 +39,5 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 			return ((char *)str);
 		str++;
 	}
-	return (0);
-}
-
-int main(void)
-{
-	char str[] = "MZIRIBMZIRIBMZE123";
-	char str2[] = "MZIRIBMZE";
-	size_t n = 9;
-	printf("%s\n", ft_strnstr(str, str2, n));
 	return (0);
 }
