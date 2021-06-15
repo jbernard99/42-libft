@@ -23,12 +23,14 @@ int	ft_atoi(const char *str)
 		|| *str == '\t' || *str == '\v'
 		|| *str == '\f' || *str == '\r')
 		str++;
-	while (*str == '+' || *str == '-')
+	if (*str == '+' || *str == '-')
 	{
 		if (*str == '-')
 			sign = sign * -1;
 		str++;
 	}
+	if (*str == '+' || *str == '-')
+		return (0);
 	while (*str >= '0' && *str <= '9')
 	{
 		nbr = nbr * 10;

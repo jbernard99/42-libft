@@ -50,7 +50,6 @@ char	*split_main(const char *s, char c)
 				if (!ptr)
 					return (0);
 				ft_strlcpy(ptr, s - size + 1, size + 1);
-				ptr[size + 1] = 0;
 				return (ptr);
 			}
 			s++;
@@ -72,6 +71,8 @@ char	**ft_split(char const *s, char c)
 	if (!ptr)
 		return (0);
 	i = 0;
+	while (*s == c)
+		s++;
 	while (i < nb_words)
 	{
 		ptr[i] = split_main(s, c);
