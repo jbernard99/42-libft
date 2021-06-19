@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/17 10:41:31 by jbernard          #+#    #+#             */
-/*   Updated: 2021/05/17 11:44:21 by jbernard         ###   ########.fr       */
+/*   Updated: 2021/06/18 22:25:56 by kneegher         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*split_main(const char *s, char c)
 		while (*s)
 		{
 			size++;
-			if (s[1] == c)
+			if (s[1] == c || s[1] == 0)
 			{
 				ptr = malloc(sizeof(char) * size + 1);
 				if (!ptr)
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	nb_words = get_word_count(s, c);
-	ptr = (char **)malloc(sizeof(char *) * nb_words + 1);
+	ptr = (char **)malloc(sizeof(char *) * (nb_words + 1));
 	if (!ptr)
 		return (0);
 	i = 0;
@@ -83,10 +83,11 @@ char	**ft_split(char const *s, char c)
 	return (ptr);
 }
 
+
 /*
 int main(void)
 {
-	char str[] = "Bonjour je m'appel julien bernard";
+	char str[] = "  tripouille  42  ";
 	char c = ' ';
 	char **ptr = ft_split(str, c);
 	return (0);
