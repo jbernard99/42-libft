@@ -31,32 +31,17 @@ static size_t	get_word_count(char const *str, char c)
 	return (cnt);
 }
 
-char	*split_main(const char *s, char c)
+static size_t len_until_char(char const *s, char c)
 {
-	char	*ptr;
-	size_t	size;
+	size_t i;
 
-	while (*s)
+	i = 0;
+	while (*s && *s != c)
 	{
-		size = 0;
-		while (*s == c)
-			s++;
-		while (*s)
-		{
-			size++;
-			if (s[1] == c || s[1] == 0)
-			{
-				ptr = malloc(sizeof(char) * (size + 1));
-				if (!ptr)
-					return (NULL);
-				ft_strlcpy(ptr, s - size + 1, size + 1);
-				return (ptr);
-			}
-			else
-				s++;
-		}
+		s++;
+		i++;
 	}
-	return (NULL);
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
@@ -74,8 +59,10 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < nb_words)
 	{
-		ptr[i] = split_main(s, c);
-		s += ft_strlen(ptr[i]) + 2;
+		while(*s == c && *s)
+			s++;
+		ptr[i] = ft_substr(s, 0, len_until_char(s, c));
+		s += len_until_char(s, c);
 		i++;
 	}
 	ptr[i] = 0;
