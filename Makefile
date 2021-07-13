@@ -16,13 +16,18 @@ CC = gcc
 AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = $(wildcard *.c)
+BSRC = $(wildcard *lst*.c)
+SRC = $(filter-out $(BSRCS), $(wildcard *.c))
 OBJ = $(SRC:.c=.o)
+BOBJ = $(BSRC:.c=.o)
 
 all : $(NAME)
 
 $(NAME) : $(OBJ)
 	$(AR) $(NAME) $^ 
+
+bonus: $(BOBJ) $(OBJ)
+	$(AR) $(NAME) $^
 
 %.o : %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
