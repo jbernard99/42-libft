@@ -31,9 +31,9 @@ static size_t	get_word_count(char const *str, char c)
 	return (cnt);
 }
 
-static size_t len_until_char(char const *s, char c)
+static size_t	len_until_char(char const *s, char c)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (*s && *s != c)
@@ -59,7 +59,7 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < nb_words)
 	{
-		while(*s == c && *s)
+		while (*s == c && *s)
 			s++;
 		ptr[i] = ft_substr(s, 0, len_until_char(s, c));
 		s += len_until_char(s, c);

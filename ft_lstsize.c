@@ -5,9 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <marvin@42quebec.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 11:31:43 by jbernard          #+#    #+#             */
-/*   Updated: 2021/06/22 11:31:44 by jbernard         ###   ########.fr       */
+/*   Created: 2021/07/12 10:27:20 by jbernard          #+#    #+#             */
+/*   Updated: 2021/07/12 10:27:25 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
+int	ft_lstsize(t_list *lst)
+{
+	int	len;
+
+	len = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		len++;
+	}
+	return (len);
+}
