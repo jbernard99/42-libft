@@ -3,13 +3,13 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbernard <jbernard@student.42.fr>          +#+  +:+       +#+         #
+#    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:48:40 by jbernard          #+#    #+#              #
-#    Updated: 2021/05/18 14:34:13 by jbernard         ###   ########.fr        #
+#    Updated: 2022/09/19 14:26:35 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-# -*- MakeFile -*-
+
 NAME = libft.a
 HEADER = libft.h
 CC = gcc
@@ -17,7 +17,7 @@ AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 
 BSRC = $(wildcard *lst*.c)
-SRC = $(filter-out $(BSRCS), $(wildcard *.c))
+SRC = $(filter-out $(BSRC), $(wildcard *.c))
 OBJ = $(SRC:.c=.o)
 BOBJ = $(BSRC:.c=.o)
 
