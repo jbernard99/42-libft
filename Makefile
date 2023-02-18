@@ -16,27 +16,27 @@ CC = gcc
 AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
 
-BSRC = $(wildcard *lst*.c)
-SRC = $(filter-out $(BSRC), $(wildcard *.c))
-OBJ = $(SRC:.c=.o)
-BOBJ = $(BSRC:.c=.o)
+SRC_DIR := src
+OBJ_DIR := obj
+
+SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
-	$(AR) $(NAME) $^ 
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
-bonus: $(BOBJ) $(OBJ)
-	$(AR) $(NAME) $^
+$(NAME) : $(OBJ_DIR) $(OBJ_FILES)
+	$(AR) $(NAME) $(OBJ_FILES)
 
-%.o : %.c $(HEADER)
+$(OBJ_FILES) : $(SRC_FILES) $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
-	rm -rf *.o
+	rm -rf $(OBJ_DIR)
 
 fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-
