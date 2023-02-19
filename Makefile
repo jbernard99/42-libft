@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = libft.a
-HEADER = libft.h
+HEADER = ./include/libft.h
 CC = gcc
 AR = ar rc
 CFLAGS = -Wall -Wextra -Werror
@@ -20,17 +20,18 @@ SRC_DIR := src
 OBJ_DIR := obj
 
 SRC_FILES = $(wildcard $(SRC_DIR)/*.c)
-OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
 all : $(NAME)
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-$(NAME) : $(OBJ_DIR) $(OBJ_FILES)
+$(NAME) : $(OBJ_FILES)
+	echo $(OBJ_FILES)
 	$(AR) $(NAME) $(OBJ_FILES)
 
-$(OBJ_FILES) : $(SRC_FILES) $(HEADER)
+$(OBJ_FILES) : $(SRC_FILES) $(HEADER) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
