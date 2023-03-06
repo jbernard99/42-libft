@@ -6,7 +6,7 @@
 #    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:48:40 by jbernard          #+#    #+#              #
-#    Updated: 2022/09/19 14:26:35 by jbernard         ###   ########.fr        #
+#    Updated: 2023/03/02 15:34:30 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,9 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
 $(NAME) : $(OBJ_FILES)
-	echo $(OBJ_FILES)
 	$(AR) $(NAME) $(OBJ_FILES)
 
-$(OBJ_FILES) : $(SRC_FILES) $(HEADER) | $(OBJ_DIR)
+$(OBJ_FILES) : $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADER) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
