@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 14:17:37 by jbernard          #+#    #+#             */
-/*   Updated: 2022/09/19 14:25:04 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/04/06 10:43:04 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrev(char *str)
 {
-	size_t	size;
+	int		size;
 	int		i;
 	char	*ret;
 
