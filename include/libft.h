@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2022/09/19 14:24:52 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:15:27 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ char	**ft_split(char const *s, char c);
 
 size_t	ft_intlen(int x);
 size_t	ft_strlen(const char *str);
+size_t	ft_strtablen(char **tab);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
