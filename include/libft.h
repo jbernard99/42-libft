@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/04/11 13:50:38 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/04/18 12:50:53 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_lstsize(t_list *lst);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
