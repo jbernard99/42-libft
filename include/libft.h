@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/04/18 12:50:53 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/04/20 12:40:38 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_freetabstr(char ***tab);
 
 int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
