@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/04/20 12:40:38 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/04/20 13:34:07 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	**ft_split(char const *s, char c);
+char	**ft_tabstrdup(char **tab);
 
 size_t	ft_intlen(int x);
 size_t	ft_strlen(const char *str);
