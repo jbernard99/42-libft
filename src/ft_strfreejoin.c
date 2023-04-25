@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtablen.c                                     :+:      :+:    :+:   */
+/*   ft_strfreejoin.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 14:14:12 by jbernard          #+#    #+#             */
-/*   Updated: 2023/04/20 15:25:45 by jbernard         ###   ########.fr       */
+/*   Created: 2023/04/20 16:20:09 by jbernard          #+#    #+#             */
+/*   Updated: 2023/04/20 16:44:15 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-size_t	ft_strtablen(char **tab)
+char	*ft_strfreejoin(char *s1, char const *s2)
 {
+	char	*ptr;
 	size_t	len;
 
-	len = 0;
-	if (tab)
-	{
-		while (tab[len])
-			len++;
-	}
-	return (len);
+	if (!s1 || !s2)
+		return (0);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
+	ptr = malloc(len);
+	if (!ptr)
+		return (0);
+	ft_strlcpy(ptr, s1, len);
+	ft_strlcat(ptr, s2, len);
+	free(s1);
+	return (ptr);
 }
