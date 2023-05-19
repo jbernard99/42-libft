@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
+/*   ft_strfreejoinfree.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 10:16:03 by mgagnon           #+#    #+#             */
-/*   Updated: 2023/05/19 14:55:10 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/05/19 15:13:04 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-char	*ft_strjoinfree(char *s1, char *s2)
+char	*ft_strfreejoinfree(char *s1, char *s2)
 {
 	char	*ptr;
 	size_t	len;
