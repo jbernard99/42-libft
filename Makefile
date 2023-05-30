@@ -6,7 +6,7 @@
 #    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/18 11:48:40 by jbernard          #+#    #+#              #
-#    Updated: 2023/05/19 14:53:04 by jbernard         ###   ########.fr        #
+#    Updated: 2023/05/30 10:54:02 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME) : $(OBJ_FILES)
 	@ $(AR) $(NAME) $(OBJ_FILES)
 
 $(OBJ_FILES) : $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(HEADER) | $(OBJ_DIR)
-	@ printf "$(GREEN)- ⚡⚡⚡ -> Compiling $(PURPLE)$(notdir $@)$(GREEN) using $(PURPLE)$(notdir $<)$(GREEN) ...       \r$(RESET)"
+	@ printf "$(GREEN)- ⚡⚡⚡ -> Compiling $(PURPLE)$(notdir $@)$(GREEN) using $(PURPLE)$(notdir $<)$(GREEN) ...                             \r$(RESET)"
 	@ $(CC) $(CFLAGS) -c $< -o $@
 
 clean :
