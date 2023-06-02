@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabstrchr.c                                     :+:      :+:    :+:   */
+/*   ft_sfree.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 16:54:27 by jbernard          #+#    #+#             */
-/*   Updated: 2023/06/02 17:04:09 by jbernard         ###   ########.fr       */
+/*   Created: 2023/05/29 12:04:28 by jbernard          #+#    #+#             */
+/*   Updated: 2023/05/29 12:06:26 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-char	*ft_tabstrchr(char **token, char *to_find)
+void	ft_sfree(void *tofree)
 {
-	int	i;
-	int	j;
-	int	k;
-
-	i = 0;
-	while (token[i])
-	{
-		j = 0;
-		while (to_find[j])
-		{
-			if (ft_strchr(token[i], to_find[j]))
-				return (&token[i]);
-	}
-	return (0);
+	if (tofree)
+		free(tofree);
 }
