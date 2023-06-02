@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/05/19 15:13:14 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:01:30 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ char	*ft_strfreejoin(char *s1, char const *s2);
 char	*ft_strfreejoinfree(char *s1, char *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_tabstrchr(char **token, char *to_find);
+char	*ft_tabstrcmp(char **tab, char *str);
 
 char	**ft_split(char const *s, char c);
 char	**ft_tabstrdup(char **tab);
