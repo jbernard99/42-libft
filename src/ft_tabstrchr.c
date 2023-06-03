@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 16:54:27 by jbernard          #+#    #+#             */
-/*   Updated: 2023/06/02 17:04:09 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/06/02 17:13:25 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_tabstrchr(char **token, char *to_find)
 {
 	int	i;
 	int	j;
-	int	k;
 
 	i = 0;
 	while (token[i])
@@ -25,7 +24,10 @@ char	*ft_tabstrchr(char **token, char *to_find)
 		while (to_find[j])
 		{
 			if (ft_strchr(token[i], to_find[j]))
-				return (&token[i]);
+				return (token[i]);
+			j++;
+		}
+		i++;
 	}
 	return (0);
 }
