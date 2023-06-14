@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 16:20:09 by jbernard          #+#    #+#             */
-/*   Updated: 2023/04/20 16:44:15 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/06/06 14:37:32 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ char	*ft_strfreejoin(char *s1, char const *s2)
 		return (0);
 	ft_strlcpy(ptr, s1, len);
 	ft_strlcat(ptr, s2, len);
-	free(s1);
+	ft_sfree(s1);
 	return (ptr);
 }
