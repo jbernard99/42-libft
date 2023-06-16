@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:00:13 by jbernard          #+#    #+#             */
-/*   Updated: 2023/06/02 18:33:26 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:44:53 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ char	*ft_tabstrcmp(char **tab, char *str)
 			return (tab[i]);
 		i++;
 	}
-
 	return (0);
 }
