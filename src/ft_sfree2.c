@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetabstr.c                                    :+:      :+:    :+:   */
+/*   ft_sfree2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 12:36:36 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/29 13:39:09 by jbernard         ###   ########.fr       */
+/*   Created: 2023/08/29 10:19:35 by mgagnon           #+#    #+#             */
+/*   Updated: 2023/08/29 13:37:43 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void	ft_freetabstr(char **tab)
+void	*ft_sfree2(void *tofree)
 {
-	int	i;
-
-	if (tab)
-	{
-		i = 0;
-		while (tab[i])
-		{
-			tab[i] = ft_sfree2(tab[i]);
-			i++;
-		}
-	}
-	tab = ft_sfree2(tab);
+	if (tofree)
+		free(tofree);
+	return (NULL);
 }
