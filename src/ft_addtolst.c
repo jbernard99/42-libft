@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_freetabstr.c                                    :+:      :+:    :+:   */
+/*   ft_addtolst.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 12:36:36 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/31 12:49:25 by jbernard         ###   ########.fr       */
+/*   Created: 2023/08/31 10:18:35 by jbernard          #+#    #+#             */
+/*   Updated: 2023/08/31 12:55:41 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-char	**ft_freetabstr(char **tab)
+char	**ft_addtolst(char **lst, char *add)
 {
-	int	i;
+	char	**new_lst;
+	int		i;
+	int		len;
 
-	if (tab)
+	len = ft_strtablen(lst);
+	i = 0;
+	new_lst = ft_calloc(len + 2, sizeof(char *));
+	while (i < len)
 	{
-		i = 0;
-		while (tab[i])
-		{
-			tab[i] = ft_sfree2(tab[i]);
-			i++;
-		}
+		new_lst[i] = ft_strdup(lst[i]);
+		i++;
 	}
-	tab = ft_sfree2(tab);
-	return (tab);
+	lst = ft_freetabstr(lst);
+	new_lst[i] = ft_strdup(add);
+	add = ft_sfree2(add);
+	new_lst[i + 1] = NULL;
+	return (new_lst);
 }

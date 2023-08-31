@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/29 13:37:21 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/08/31 12:49:56 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -38,9 +39,10 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_freetabstr(char **tab);
+char	**ft_freetabstr(char **tab);
 void	ft_sfree(void *tofree);
 void	*ft_sfree2(void *tofree);
+void	ft_printtab(char **tab);
 
 int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
@@ -74,6 +76,7 @@ char	*ft_tabstrcmp(char **tab, char *str);
 
 char	**ft_split(char const *s, char c);
 char	**ft_tabstrdup(char **tab);
+char	**ft_addtolst(char **lst, char *add);
 
 size_t	ft_intlen(int x);
 size_t	ft_strlen(const char *str);
