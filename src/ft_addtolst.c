@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 10:18:35 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/31 13:39:11 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:54:05 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	**ft_addtolst(char **lst, char *add)
 		new_lst[i] = ft_strdup(lst[i]);
 		i++;
 	}
-	lst = ft_freetabstr(lst);
+	ft_freetabstr(lst);
 	new_lst[i] = ft_strdup(add);
 	add = ft_sfree2(add);
 	new_lst[i + 1] = NULL;

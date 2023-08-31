@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/31 12:49:56 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/08/31 13:53:38 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	**ft_freetabstr(char **tab);
+void	ft_freetabstr(char **tab);
 void	ft_sfree(void *tofree);
 void	*ft_sfree2(void *tofree);
 void	ft_printtab(char **tab);
