@@ -26,9 +26,9 @@ char	**ft_addtolst(char **lst, char *add)
 		new_lst[i] = ft_strdup(lst[i]);
 		i++;
 	}
-	ft_freetabstr(lst);
+	if (len != 0)
+		ft_freetabstr(lst);
 	new_lst[i] = ft_strdup(add);
-	add = ft_sfree2(add);
 	new_lst[i + 1] = NULL;
 	return (new_lst);
 }
