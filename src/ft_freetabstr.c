@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 12:36:36 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/31 13:53:08 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:00:23 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	ft_freetabstr(char **tab)
 			ft_sfree(tab[i]);
 			i++;
 		}
+		ft_sfree(tab);
 	}
-	ft_sfree(tab);
 }
