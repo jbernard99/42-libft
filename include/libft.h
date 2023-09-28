@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 13:34:02 by jbernard          #+#    #+#             */
-/*   Updated: 2023/08/31 13:53:38 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:14:01 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_tabstrchr(char **token, char *to_find);
 char	*ft_tabstrcmp(char **tab, char *str);
+char	*ft_strldup(const char *str, size_t len);
 
 char	**ft_split(char const *s, char c);
 char	**ft_tabstrdup(char **tab);
